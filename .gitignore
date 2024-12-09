@@ -1,0 +1,6 @@
+venv/
+InferenceApp\__pycache__
+commodai\.env
+commodai\src\commodai\__pycache__
+Dashboard\venv
+commodai\venv

@@ -1,0 +1,39 @@
+research_task:
+  description: >
+    Conduct a thorough research about the top 8 articles about the {topic}.
+    Ensure these articles are the top results.
+    Make sure you find any interesting and relevant information given
+    the current year is 2024.
+  expected_output: >
+    A list of articles and summary of each of them in 3 lines with the most relevant information about {topic}.
+  agent: researcher
+
+reporting_task:
+  description: >
+    Analyze a collection of articles and perform sentiment analysis on each.
+    - For each article, assign a sentiment score on a scale from -10 to 10:
+      -10: Extremely negative,
+      0: Neutral,
+      +10: Extremely positive.
+    - After processing all articles, calculate:
+      1. The average sentiment score across all articles.
+      2. Correctly identify each articles score and the count of articles with:
+        - Positive sentiment (score > 0)
+        - Neutral sentiment (score = 0)
+        - Negative sentiment (score < 0)
+      
+  expected_output: >
+    - Sentiment score of each artcile provided.
+    - The average sentiment score across all articles.
+    - Counts of positive, neutral, and negative sentiment articles.
+
+    Example Output:
+      Article headline:Summary.
+        sentiment_score: 7.2,
+      Article headline:Summary.
+        sentiment_score: -5.5,
+      Article headline:Summary.
+        sentiment_score: 0,
+
+    Formatted as markdown without '```'
+  agent: reporting_analyst

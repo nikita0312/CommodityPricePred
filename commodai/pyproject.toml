@@ -1,0 +1,20 @@
+[project]
+name = "commodai"
+version = "0.1.0"
+description = "commodai using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<=3.13"
+dependencies = [
+    "crewai[tools]>=0.86.0,<1.0.0"
+]
+
+[project.scripts]
+commodai = "commodai.main:run"
+run_crew = "commodai.main:run"
+train = "commodai.main:train"
+replay = "commodai.main:replay"
+test = "commodai.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
