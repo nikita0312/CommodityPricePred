@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+__import__("pysqlite3")
+import sys
+
+sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+
 import warnings
 import streamlit as st
 from commodai.src.commodai.crew import Commodai
