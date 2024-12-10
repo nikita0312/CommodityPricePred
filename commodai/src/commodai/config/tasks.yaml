@@ -1,39 +1,39 @@
 research_task:
   description: >
-    Conduct a thorough research about the top 8 articles about the {topic}.
-    Ensure these articles are the top results.
-    Make sure you find any interesting and relevant information given
-    the current year is 2024.
+    Accept user input specifying the commodity (e.g., wheat, rice) and the {topic} (e.g., "new policies," "climate impact on crops").
+    Use the Google Serper tool to perform searches for the most relevant articles related to the {topic}.
+    Retrieve and rank up to 10 articles based on relevance and publication date.
+    Provide the following for each article:
+      - Headline
+      - Full URL to the article
+      - Brief content snippet or summary
   expected_output: >
-    A list of articles and summary of each of them in 3 lines with the most relevant information about {topic}.
+    A ranked list of up to 10 articles related to the {topic}, including:
+Headline
+      - Full URL to the article
+      - Brief summary of each article
   agent: researcher
 
 reporting_task:
   description: >
-    Analyze a collection of articles and perform sentiment analysis on each.
-    - For each article, assign a sentiment score on a scale from -10 to 10:
-      -10: Extremely negative,
-      0: Neutral,
-      +10: Extremely positive.
-    - After processing all articles, calculate:
-      1. The average sentiment score across all articles.
-      2. Correctly identify each articles score and the count of articles with:
-        - Positive sentiment (score > 0)
-        - Neutral sentiment (score = 0)
-        - Negative sentiment (score < 0)
-      
-  expected_output: >
-    - Sentiment score of each artcile provided.
-    - The average sentiment score across all articles.
-    - Counts of positive, neutral, and negative sentiment articles.
+    Analyze each article fetched by the Researcher Agent based on the {topic}.
+    Perform sentiment analysis, assigning a score from -5 to +5 to each article to reflect its potential impact on the commodity price:
+      - Positive (surge): Score > 0
+      - Negative (drop): Score < 0
+      - Neutral: Score = 0
+    Aggregate and summarize the results:
+      - Total count of positive, negative, and neutral articles.
+      - Insights on the overall sentiment regarding the {topic}.
+    Present a final report including actionable insights.
 
-    Example Output:
-      Article headline:Summary.
-        sentiment_score: 7.2,
-      Article headline:Summary.
-        sentiment_score: -5.5,
-      Article headline:Summary.
-        sentiment_score: 0,
+    For each article:
+      - Headline
+      - Summary
+      - Sentiment score
+      - Full URL
+    Aggregate Summary:
+      - Total number of articles by sentiment (positive, negative, neutral)
+      - Insights on the overall trend for the commodity price regarding the {topic}.
 
     Formatted as markdown without '```'
   agent: reporting_analyst
