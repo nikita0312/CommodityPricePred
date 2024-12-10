@@ -7,7 +7,7 @@ from InferenceApp.utils.model_utils import (
     make_predictions,
 )
 
-model_path = "InferenceApp\models\model_lstm_multi.keras"
+model_path = "InferenceApp/models/model_lstm_multi.keras"
 
 
 def main():
