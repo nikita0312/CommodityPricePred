@@ -10,10 +10,12 @@ warnings.filterwarnings("ignore")
 # Set page config
 st.set_page_config(page_title="Dashboard", page_icon="📊", layout="wide")
 
-# Update the folder_path definition
-folder_path = os.path.join(
-    os.path.dirname(os.path.dirname(__file__)), "Dashboard\download"
-)
+# # Update the folder_path definition
+# folder_path = os.path.join(
+#     os.path.dirname(os.path.dirname(__file__)), "Dashboard\download"
+# )
+
+folder_path = "Dashboard/download"
 
 
 def get_csv_from_folder(folder_path):
