@@ -29,7 +29,7 @@ reporting_task:
    expected_output: >
     The final report should be in markdown format and include the following sections:
 
-    # Top 10 Relevant Articles
+    # Top 8 Relevant Articles
 
     ### 1. **Govt Raises MSP for Wheat**
     
