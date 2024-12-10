@@ -1,7 +1,7 @@
 research_task:
   description: >
-    Accept user input specifying the commodity (e.g., wheat, rice, pulses) and the {topic} (e.g., "MSP changes," "export policy updates").
-    Use the Google Serper tool to search for the most relevant Indian articles related to the {topic}.
+    Find out the latest policy changes, updates and reports on the commodity {topic} in India.
+    Look for the most relevant Indian articles that might affect the commodity prices.
     Retrieve and rank up to 10 articles based on relevance, publication date, and reliability.
     Provide the following details for each article:
       - Headline
@@ -27,27 +27,30 @@ reporting_task:
   expected_output: >
     The final report should be in markdown format and include the following sections:
 
-    Top 10 Relevant Articles
-    1. **HEADLINE IN ALL CAPS**
-       Summary: Brief content snippet summarizing the article.
-       
-       - **Sentiment Score:** +3
-       - *Source:* The Hindu
+    # Top 10 Relevant Articles
 
-    2. **HEADLINE IN ALL CAPS**
-       Summary: Brief content snippet summarizing the article.
-       
-       - **Sentiment Score:** -2
-       - *Source:* Economic Times
+    ### 1. **Govt Raises MSP for Wheat**
+    
+    --The government has announced an increase in the minimum support price (MSP) for wheat to ₹2,200 per quintal. This move is expected to benefit farmers but may lead to a price surge in open markets.
+    
+    - **Sentiment Score:** +3
+    - *Source:* The Hindu
 
-    Sentiment Analysis Summary
-      - Total Articles Analyzed: 10
-      - Positive Sentiment Articles: 4
-      - Negative Sentiment Articles: 3
-      - Neutral Sentiment Articles: 3
-      - Overall Sentiment: Neutral to Slightly Positive
+    ### 2. **Rainfall Deficit May Impact Rice Exports**
+    
+    --Below-average rainfall in key rice-producing states such as Punjab and Haryana may result in lower exports, affecting both global and domestic markets.
+    
+    - **Sentiment Score:** -2
+    - *Source:* Economic Times
 
-    Impact Insights:
-      - The increase in MSP for wheat indicates a likely price surge in domestic markets.
-      - Rainfall deficits may impact rice production, potentially causing price fluctuations.
+    ## Sentiment Analysis Summary
+    - Total Articles Analyzed: 10
+    - Positive Sentiment Articles: 4
+    - Negative Sentiment Articles: 3
+    - Neutral Sentiment Articles: 3
+    - Overall Sentiment: Neutral to Slightly Positive
+
+    ## Impact Insights
+    - The increase in MSP for wheat indicates a likely price surge in domestic markets.
+    - Rainfall deficits may impact rice production, potentially causing price fluctuations.
   agent: reporting_analyst
