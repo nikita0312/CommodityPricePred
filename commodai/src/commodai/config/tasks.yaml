@@ -1,16 +1,19 @@
 research_task:
   description: >
-    Find out the latest policy changes, updates and reports on the commodity {topic} in India.
-    Look for the most relevant Indian articles that might affect the commodity prices.
-    Retrieve and rank up to 10 articles based on relevance, publication date, and reliability.
+    Find out the latest policy changes, updates and reports on the commodity {topic} in India from the past month.
+    Look for the most recent Indian articles that might affect the commodity prices, prioritizing news from the last 30 days.
+    Retrieve and rank up to 10 articles based on publication date (most recent first), relevance, and reliability.
+    Discard any articles older than 30 days unless they are extremely significant for current market conditions.
     Provide the following details for each article:
       - Headline
       - Brief content snippet summarizing the article
+      - Publication date
   expected_output: >
     A ranked list of up to 8 articles related to the {topic}, including:
       - Headline: Title of the article
       - Summary: 2 to 3 sentence summary
-      - Source: Website or publication name 
+      - Source: Website or publication name
+      - Date: Publication date
   agent: researcher
 
 reporting_task:

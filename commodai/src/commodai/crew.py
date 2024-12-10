@@ -31,7 +31,20 @@ class Commodai:
         return Agent(
             config=self.agents_config["researcher"],
             verbose=True,
-            tool=SerperDevTool(n_results=8, country="India"),
+            tool=SerperDevTool(
+                n_results=8,
+                country="India",
+                search_params={
+                    "tbs": "qdr:m",  # Limit to past month
+                    "sort": "date",  # Sort by date
+                    "gl": "in",  # Geolocation set to India
+                    "hl": "en",  # Language set to English
+                    "num": 10,  # Number of results to fetch
+                    "filter": "0",  # Removes duplicate content
+                    # "as_rights": "(cc_publicdomain|cc_attribute|cc_sharealike)",  # Look for credible sources
+                    "as_sitesearch": "reuters.com OR economictimes.indiatimes.com OR bloomberg.com OR financialexpress.com OR business-standard.com OR livemint.com",  # Limit to reputable sources
+                },
+            ),
         )
 
     @agent
