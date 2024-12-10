@@ -28,6 +28,7 @@ reporting_task:
       - Neutral (no significant impact): Score = 0
   expected_output: >
     The final report should be in markdown format and include the following sections:
+    Only section headlines should be in big format.
 
     # Top 10 Relevant Articles
 
@@ -39,14 +40,14 @@ reporting_task:
     - *Source:* The Hindu
     - *Date:* 2024-03-15
 
-    ## Sentiment Analysis Summary
+    ## Sentiment Analysis Summary:
     - Total Articles Analyzed: 10
     - Positive Sentiment Articles: 4
     - Negative Sentiment Articles: 3
     - Neutral Sentiment Articles: 3
     - Overall Sentiment: Neutral to Slightly Positive
 
-    ## Impact Insights
+    ## Impact Insights:
     - The increase in MSP for wheat indicates a likely price surge in domestic markets.
     - Rainfall deficits may impact rice production, potentially causing price fluctuations.
   agent: reporting_analyst
