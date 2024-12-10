@@ -2,6 +2,7 @@
 venv_commod
 InferenceApp/__pycache__
 commodai/src/commodai/__pycache__
+Dashboard/__pycache__
 Dashboard/venv
 commodai/venv
 venv2
