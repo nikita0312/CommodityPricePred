@@ -1,9 +1,13 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime, date
-from utils.model_utils import load_model, prepare_input_sequence, make_predictions
+from InferenceApp.utils.model_utils import (
+    load_model,
+    prepare_input_sequence,
+    make_predictions,
+)
 
-model_path = "models/model_lstm_multi.keras"
+model_path = "InferenceApp\models\model_lstm_multi.keras"
 
 
 def main():
@@ -41,24 +45,6 @@ def main():
 
                 st.subheader("Predictions for the next 30 days")
                 st.dataframe(predictions_df)
-
-                # Combine input and predictions for plotting
-                combined_df = pd.concat(
-                    [
-                        input_df["Price"].to_frame("Actual_Price"),  # Changed this line
-                        predictions_df["Predicted_Price"],
-                    ]
-                ).sort_index()
-
-                st.line_chart(combined_df)
-
-                csv = predictions_df.to_csv()
-                st.download_button(
-                    label="Download Predictions as CSV",
-                    data=csv,
-                    file_name="predictions.csv",
-                    mime="text/csv",
-                )
 
             else:
                 st.warning("Please enter 5 non-zero positive price values.")

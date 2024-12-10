@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import warnings
 import streamlit as st
-from crew import Commodai
+from commodai.src.commodai.crew import Commodai
 import os
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
@@ -19,25 +19,25 @@ def run_streamlit_ui():
     )
 
     # Custom styling for a polished look
-    st.markdown(
-        """
-        <style>
-        .main {
-            background-color: #f8f9fa;
-            color: #333;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .stButton button {
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 8px;
-            padding: 10px 20px;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
+    # st.markdown(
+    #     """
+    #     <style>
+    #     .main {
+    #         background-color: #f8f9fa;
+    #         color: #333;
+    #         padding: 20px;
+    #         border-radius: 10px;
+    #     }
+    #     .stButton button {
+    #         background-color: #4CAF50;
+    #         color: white;
+    #         border-radius: 8px;
+    #         padding: 10px 20px;
+    #     }
+    #     </style>
+    #     """,
+    #     unsafe_allow_html=True,
+    # )
 
     # App Title
     st.title("🌾 CommodAI Crew Runner")

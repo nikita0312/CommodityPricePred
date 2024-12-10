@@ -1,11 +1,12 @@
-# streamlit
-# tensorflow
-# pandas
-# numpy
-# python-dateutil
+streamlit
+tensorflow
+pandas
+numpy
+python-dateutil
 selenium
 plotly
 webdriver-manager
 crewai
 crewai-tools
 pydantic
+langchain
