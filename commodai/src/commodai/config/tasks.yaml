@@ -13,6 +13,7 @@ research_task:
       - Summary: 2 to 3 sentence summary
       - Source: Website or publication name
       - Date: Publication date
+      - Average Sentiment Score
   agent: researcher
 
 reporting_task:
@@ -41,7 +42,7 @@ reporting_task:
     - *Date:* 2024-03-15
 
     ## Sentiment Analysis Summary:
-    - Total Articles Analyzed: 10
+    - Average Sentiment Score: 1.5
     - Positive Sentiment Articles: 4
     - Negative Sentiment Articles: 3
     - Neutral Sentiment Articles: 3
