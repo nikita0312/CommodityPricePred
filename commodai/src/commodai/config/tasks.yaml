@@ -25,33 +25,20 @@ reporting_task:
       - Overall sentiment trend (positive, negative, or neutral).
       - Store the final report in a .md file for easy sharing and documentation.
   expected_output: >
-    The final report should be in markdown format.
-    The article headlines should be bolded in all caps, the summary should start on a new line below the headline,
-    the sentiment score should be in bold on a new line, the source should be in smaller font italic on a new line below the sentiment score.
-    It will contain the following sections:
-      - Top 10 Relevant Articles
-      - Sentiment Analysis Summary
-      - Impact Insights
+    The final report should be in markdown format and include the following sections:
 
-    Example:
     Top 10 Relevant Articles
-    1. Govt Raises MSP for Wheat
-    The government has announced an increase in the minimum support price (MSP) for wheat to ₹2,200 per quintal. This move is expected to benefit farmers but may lead to a price surge in open markets.
-    
-    Sentiment Score: +3
-    Source: The Hindu
+    1. **HEADLINE IN ALL CAPS**
+       Summary: Brief content snippet summarizing the article.
+       
+       - **Sentiment Score:** +3
+       - *Source:* The Hindu
 
-    2. Rainfall Deficit May Impact Rice Exports
-    Below-average rainfall in key rice-producing states such as Punjab and Haryana may result in lower exports, affecting both global and domestic markets.
-
-    Sentiment Score: -2
-    Source: Economic Times
-
-    3. Subsidy Policy for Pulses Revised
-    The central government has introduced a new subsidy scheme for pulses to promote sustainable farming, which is likely to improve farmer incomes and stabilize prices.
-
-    Sentiment Score: +4
-    Source: The Economic Times
+    2. **HEADLINE IN ALL CAPS**
+       Summary: Brief content snippet summarizing the article.
+       
+       - **Sentiment Score:** -2
+       - *Source:* Economic Times
 
     Sentiment Analysis Summary
       - Total Articles Analyzed: 10
@@ -59,6 +46,7 @@ reporting_task:
       - Negative Sentiment Articles: 3
       - Neutral Sentiment Articles: 3
       - Overall Sentiment: Neutral to Slightly Positive
+
     Impact Insights:
       - The increase in MSP for wheat indicates a likely price surge in domestic markets.
       - Rainfall deficits may impact rice production, potentially causing price fluctuations.
