@@ -18,7 +18,7 @@ research_task:
 reporting_task:
   description: >
     Analyze each article fetched by the Researcher Agent in the context of the {topic} and its potential impact on commodity prices in India.
-    For each article, use the exact data provided in the search results:
+    For each of the 8 articles, use the exact data provided in the search results:
       - title: Use as the headline
       - snippet: Use as the base for your summary
       - date: Include the publication date
@@ -26,7 +26,7 @@ reporting_task:
       - Positive (surge in prices): Score > 0
       - Negative (drop in prices): Score < 0
       - Neutral (no significant impact): Score = 0
-  expected_output: >
+   expected_output: >
     The final report should be in markdown format and include the following sections:
 
     # Top 10 Relevant Articles
@@ -38,14 +38,6 @@ reporting_task:
     - **Sentiment Score:** +3
     - *Source:* The Hindu
     - *Date:* 2024-03-15
-    
-    ### 2. **Rainfall Deficit May Impact Rice Exports**
-    
-    Below-average rainfall in key rice-producing states such as Punjab and Haryana may result in lower exports, affecting both global and domestic markets.
-    
-    - **Sentiment Score:** -2
-    - *Source:* Economic Times
-    - *Date:* 2024-03-14
 
     ## Sentiment Analysis Summary
     - Total Articles Analyzed: 10
