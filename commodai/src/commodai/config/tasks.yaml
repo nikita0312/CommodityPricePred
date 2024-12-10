@@ -26,8 +26,8 @@ reporting_task:
       - Store the final report in a .md file for easy sharing and documentation.
   expected_output: >
     The final report should be in markdown format.
-    The article headlines should be bolded, the summary should be on a new line,
-    the sentiment score should be in bold on a new line, the source should be in small italic.
+    The article headlines should be bolded in all caps, the summary should start on a new line below the headline,
+    the sentiment score should be in bold on a new line, the source should be in smaller font italic on a new line below the sentiment score.
     It will contain the following sections:
       - Top 10 Relevant Articles
       - Sentiment Analysis Summary
