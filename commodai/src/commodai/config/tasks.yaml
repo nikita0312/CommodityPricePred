@@ -3,30 +3,22 @@ research_task:
     Find out the latest policy changes, updates and reports on the commodity {topic} in India from the past month.
     Look for the most recent Indian articles that might affect the commodity prices, prioritizing news from the last 30 days.
     Retrieve and rank up to 10 articles based on publication date (most recent first), relevance, and reliability.
-    Discard any articles older than 30 days unless they are extremely significant for current market conditions.
+    For each article, include its URL for reference.
     Provide the following details for each article:
       - Headline
       - Brief content snippet summarizing the article
       - Publication date
+      - Source URL
   expected_output: >
     A ranked list of up to 8 articles related to the {topic}, including:
       - Headline: Title of the article
       - Summary: 2 to 3 sentence summary
       - Source: Website or publication name
       - Date: Publication date
+      - URL: Direct link to the article
   agent: researcher
 
 reporting_task:
-  description: >
-    Analyze each article fetched by the Researcher Agent in the context of the {topic} and its potential impact on commodity prices in India.
-    Perform sentiment analysis, assigning a score from -5 to +5 based on its expected influence:
-      - Positive (surge in prices): Score > 0
-      - Negative (drop in prices): Score < 0
-      - Neutral (no significant impact): Score = 0
-    Aggregate and summarize results, providing:
-      - Total count of positive, negative, and neutral articles.
-      - Overall sentiment trend (positive, negative, or neutral).
-      - Store the final report in a .md file for easy sharing and documentation.
   expected_output: >
     The final report should be in markdown format and include the following sections:
 
@@ -34,26 +26,19 @@ reporting_task:
 
     ### 1. **Govt Raises MSP for Wheat**
     
-    --The government has announced an increase in the minimum support price (MSP) for wheat to ₹2,200 per quintal. This move is expected to benefit farmers but may lead to a price surge in open markets.
+    The government has announced an increase in the minimum support price (MSP) for wheat to ₹2,200 per quintal. This move is expected to benefit farmers but may lead to a price surge in open markets.
     
     - **Sentiment Score:** +3
     - *Source:* The Hindu
+    - *Date:* 2024-03-15
+    - *URL:* [Read full article](https://example.com/article-url)
 
     ### 2. **Rainfall Deficit May Impact Rice Exports**
     
-    --Below-average rainfall in key rice-producing states such as Punjab and Haryana may result in lower exports, affecting both global and domestic markets.
+    Below-average rainfall in key rice-producing states such as Punjab and Haryana may result in lower exports, affecting both global and domestic markets.
     
     - **Sentiment Score:** -2
     - *Source:* Economic Times
-
-    ## Sentiment Analysis Summary
-    - Total Articles Analyzed: 10
-    - Positive Sentiment Articles: 4
-    - Negative Sentiment Articles: 3
-    - Neutral Sentiment Articles: 3
-    - Overall Sentiment: Neutral to Slightly Positive
-
-    ## Impact Insights
-    - The increase in MSP for wheat indicates a likely price surge in domestic markets.
-    - Rainfall deficits may impact rice production, potentially causing price fluctuations.
+    - *Date:* 2024-03-14
+    - *URL:* [Read full article](https://example.com/article-url)
   agent: reporting_analyst
