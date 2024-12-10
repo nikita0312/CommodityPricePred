@@ -19,6 +19,16 @@ research_task:
   agent: researcher
 
 reporting_task:
+  description: >
+    Analyze each article fetched by the Researcher Agent in the context of the {topic} and its potential impact on commodity prices in India.
+    Perform sentiment analysis, assigning a score from -5 to +5 based on its expected influence:
+      - Positive (surge in prices): Score > 0
+      - Negative (drop in prices): Score < 0
+      - Neutral (no significant impact): Score = 0
+    Aggregate and summarize results, providing:
+      - Total count of positive, negative, and neutral articles.
+      - Overall sentiment trend (positive, negative, or neutral).
+      - Store the final report in a .md file for easy sharing and documentation.
   expected_output: >
     The final report should be in markdown format and include the following sections:
 
@@ -41,4 +51,15 @@ reporting_task:
     - *Source:* Economic Times
     - *Date:* 2024-03-14
     - *URL:* [Read full article](https://example.com/article-url)
+
+    ## Sentiment Analysis Summary
+    - Total Articles Analyzed: 10
+    - Positive Sentiment Articles: 4
+    - Negative Sentiment Articles: 3
+    - Neutral Sentiment Articles: 3
+    - Overall Sentiment: Neutral to Slightly Positive
+
+    ## Impact Insights
+    - The increase in MSP for wheat indicates a likely price surge in domestic markets.
+    - Rainfall deficits may impact rice production, potentially causing price fluctuations.
   agent: reporting_analyst
