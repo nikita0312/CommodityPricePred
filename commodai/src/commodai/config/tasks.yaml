@@ -9,7 +9,7 @@ research_task:
       - Brief content snippet or summary
   expected_output: >
     A ranked list of up to 10 articles related to the {topic}, including:
-Headline
+      - Headline
       - Full URL to the article
       - Brief summary of each article
   agent: researcher
@@ -25,7 +25,7 @@ reporting_task:
       - Total count of positive, negative, and neutral articles.
       - Insights on the overall sentiment regarding the {topic}.
     Present a final report including actionable insights.
-
+  expected_output: >
     For each article:
       - Headline
       - Summary
