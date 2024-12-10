@@ -3,7 +3,6 @@ import pandas as pd
 import plotly.express as px
 import os
 import warnings
-import tempfile
 
 # Ignore all warnings
 warnings.filterwarnings("ignore")
@@ -16,62 +15,34 @@ folder_path = os.path.join(
     os.path.dirname(os.path.dirname(__file__)), "Dashboard\download"
 )
 
-# Create a temporary directory for deployment
-TEMP_DIR = tempfile.gettempdir()
-
-
-def get_download_folder():
-    """Get the appropriate download folder path based on environment"""
-    if os.getenv("STREAMLIT_DEPLOYMENT"):
-        # Use temporary directory in deployment
-        folder_path = os.path.join(TEMP_DIR, "download")
-    else:
-        # Local development path
-        folder_path = os.path.join(
-            os.path.dirname(os.path.dirname(__file__)), "download"
-        )
-
-    # Create the folder if it doesn't exist
-    os.makedirs(folder_path, exist_ok=True)
-    return folder_path
-
-
-# Update the folder_path definition
-folder_path = get_download_folder()
-
 
 def get_csv_from_folder(folder_path):
-    """Get CSV file from folder with proper error handling"""
-    try:
-        # Create folder if it doesn't exist
-        os.makedirs(folder_path, exist_ok=True)
+    print("folder_path: ", folder_path)
+    # Create folder if it doesn't exist
+    os.makedirs(folder_path, exist_ok=True)
 
-        # List all files in the folder
-        files = os.listdir(folder_path)
+    # List all files in the folder
+    files = os.listdir(folder_path)
 
-        # Filter out the CSV files
-        csv_files = [file for file in files if file.endswith(".csv")]
+    # Filter out the CSV files
+    csv_files = [file for file in files if file.endswith(".csv")]
 
-        # Check if there are any CSV files
-        if len(csv_files) == 0:
-            st.warning("No CSV file found in the folder. Please upload a CSV file.")
+    # Check if there are any CSV files
+    if len(csv_files) == 0:
+        st.warning("No CSV file found in the folder. Please upload a CSV file.")
 
-            # Add file uploader
-            uploaded_file = st.file_uploader("Upload your CSV file", type=["csv"])
-            if uploaded_file is not None:
-                # Save the uploaded file to temporary location
-                file_path = os.path.join(folder_path, uploaded_file.name)
-                with open(file_path, "wb") as f:
-                    f.write(uploaded_file.getbuffer())
-                return file_path
-            return None
-
-        # Return the full path of the first CSV file
-        return os.path.join(folder_path, csv_files[0])
-
-    except Exception as e:
-        st.error(f"Error accessing folder: {str(e)}")
+        # Add file uploader
+        uploaded_file = st.file_uploader("Upload your CSV file", type=["csv"])
+        if uploaded_file is not None:
+            # Save the uploaded file
+            file_path = os.path.join(folder_path, uploaded_file.name)
+            with open(file_path, "wb") as f:
+                f.write(uploaded_file.getbuffer())
+            return file_path
         return None
+
+    # Return the full path of the first CSV file
+    return os.path.join(folder_path, csv_files[0])
 
 
 def main():
