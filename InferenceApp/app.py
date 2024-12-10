@@ -15,7 +15,7 @@ def main():
     st.write("Enter 5 consecutive daily price values to predict the next 30 days")
 
     try:
-        model = load_model(model_path=model_path)
+        model = load_model(model_path)
         st.success("Model loaded successfully!")
 
     except Exception as e:
