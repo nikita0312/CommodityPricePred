@@ -1,39 +1,45 @@
 research_task:
   description: >
-    Accept user input specifying the commodity (e.g., wheat, rice) and the {topic} (e.g., "new policies," "climate impact on crops").
-    Use the Google Serper tool to perform searches for the most relevant articles related to the {topic}.
-    Retrieve and rank up to 10 articles based on relevance and publication date.
-    Provide the following for each article:
+    Accept user input specifying the commodity (e.g., wheat, rice, pulses) and the {topic} (e.g., "MSP changes," "export policy updates").
+    Use the Google Serper tool to search for the most relevant Indian articles related to the {topic}.
+    Retrieve and rank up to 10 articles based on relevance, publication date, and reliability.
+    Provide the following details for each article:
       - Headline
-      - Full URL to the article
-      - Brief content snippet or summary
+      - Brief content snippet summarizing the article
   expected_output: >
     A ranked list of up to 10 articles related to the {topic}, including:
-      - Headline
-      - Full URL to the article
-      - Brief summary of each article
+      - Headline: Title of the article
+      - Summary: 2 to 3 sentence summary
+      - Source: Website or publication name 
   agent: researcher
 
 reporting_task:
   description: >
-    Analyze each article fetched by the Researcher Agent based on the {topic}.
-    Perform sentiment analysis, assigning a score from -5 to +5 to each article to reflect its potential impact on the commodity price:
-      - Positive (surge): Score > 0
-      - Negative (drop): Score < 0
-      - Neutral: Score = 0
-    Aggregate and summarize the results:
+    Analyze each article fetched by the Researcher Agent in the context of the {topic} and its potential impact on commodity prices in India.
+    Perform sentiment analysis, assigning a score from -5 to +5 based on its expected influence:
+      - Positive (surge in prices): Score > 0
+      - Negative (drop in prices): Score < 0
+      - Neutral (no significant impact): Score = 0
+    Aggregate and summarize results, providing:
       - Total count of positive, negative, and neutral articles.
-      - Insights on the overall sentiment regarding the {topic}.
-    Present a final report including actionable insights.
+      - Overall sentiment trend (positive, negative, or neutral).
+      - Store the final report in a .md file for easy sharing and documentation.
   expected_output: >
-    For each article:
-      - Headline
-      - Summary
-      - Sentiment score
-      - Full URL
-    Aggregate Summary:
-      - Total number of articles by sentiment (positive, negative, neutral)
-      - Insights on the overall trend for the commodity price regarding the {topic}.
-
-    Formatted as markdown without '```'
+    Top 10 Relevant Articles
+      - Headline: Govt Raises MSP for Wheat
+        - Summary: The government has announced an increase in the minimum support price (MSP) for wheat to ₹2,200 per quintal, which is expected to benefit farmers but may lead to a price surge in open markets.
+        - Source: The Hindu
+      - Headline: Rainfall Deficit May Impact Rice Exports
+        - Summary: Below-average rainfall in key rice-producing states such as Punjab and Haryana may result in lower exports, affecting global and domestic markets.
+        - Source: Economic Times
+    ...
+    Sentiment Analysis Summary
+      - Total Articles Analyzed: 10
+      - Positive Sentiment Articles: 4
+      - Negative Sentiment Articles: 3
+      - Neutral Sentiment Articles: 3
+      - Overall Sentiment: Neutral to Slightly Positive
+    Impact Insights:
+      - The increase in MSP for wheat indicates a likely price surge for wheat in domestic markets.
+      - Rainfall deficits may impact rice production, potentially causing price fluctuations.
   agent: reporting_analyst
