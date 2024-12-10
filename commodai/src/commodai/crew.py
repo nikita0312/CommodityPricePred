@@ -31,7 +31,7 @@ class Commodai:
         return Agent(
             config=self.agents_config["researcher"],
             verbose=True,
-            tool=SerperDevTool(n_results=3, country="India"),
+            tool=SerperDevTool(n_results=8, country="India"),
         )
 
     @agent
