@@ -10,4 +10,4 @@ crewai
 crewai-tools
 pydantic
 langchain
-pysqlite-binary
+pysqlite3-binary
